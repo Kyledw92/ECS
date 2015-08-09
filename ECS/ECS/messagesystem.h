@@ -11,9 +11,11 @@ public:
 
 	void Send(EntityPtr entity, std::string componentType, std::function<void(ComponentPtr, MSGPtr)> func)
 	{
+		// Send message (callback) to a component within an entity.
 	}
 
-	void Send(ComponentPtr componentType, std::function<void(ComponentPtr, MSGPtr)> func)
+	void Send(ComponentPtr component, std::function<void(ComponentPtr, MSGPtr)> func)
 	{
+		// Send message (callback) to a component directly.
 	}
 };
