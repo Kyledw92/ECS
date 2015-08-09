@@ -30,10 +30,12 @@ public:
 class System
 {
 protected:
-	EntityManager entityManager;
-	SystemManager systemManager;
+	std::shared_ptr<EntityManager> entityManager;
+	std::shared_ptr<SystemManager> systemManager;
 public:
 	std::string type;
 
-	System(std::string type, EntityManager entityManager, SystemManager systemManager) : type(type), entityManager(entityManager), systemManager(systemManager) {}
+	System(std::string type, std::shared_ptr<EntityManager> entityManager, std::shared_ptr<SystemManager> systemManager) : type(type), entityManager(entityManager), systemManager(systemManager) {}
+
+	virtual void update(float dt = 0) {}
 };
